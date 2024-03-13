@@ -14,10 +14,10 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/portpholio/" element={<App />}>
         <Route path="/portpholio/" element={<Home />} />
-        <Route path="project" element={<Projects />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="github" element={<Github />} />
+        <Route path="portpholio/project" element={<Projects />} />
+        <Route path="portpholio/about" element={<About />} />
+        <Route path="portpholio/contact" element={<Contact />} />
+        <Route path="portpholio/github" element={<Github />} />
       </Route>
     </Route>
   )
