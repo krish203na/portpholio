@@ -350,3 +350,26 @@
     background: #353535;
   }
 }
+
+.textshadow{
+  /* text-shadow: 0 0 30px #FF0000, 0 0 35px #0000FF; */
+  font-family: "Pacifico", cursive;
+  animation: onOff .5s  infinite;
+}
+.textshadow2{
+  /* text-shadow: 0 0 30px #FF0000, 0 0 35px #0000FF; */
+  font-family: "Pacifico", cursive;
+  animation: onOff 1s  infinite;
+}
+
+@keyframes onOff {
+  from {text-shadow: 0 0 15px #FF0000, 0 0 20px #0000FF;
+  }
+  to{
+    text-shadow: 0 0 30px #FF0000, 0 0 35px #0000FF;
+
+  }
+}
+.logo{
+  font-family: "Protest Guerrilla", sans-serif;
+}
