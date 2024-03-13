@@ -65,7 +65,7 @@ const Home = () => {
             {/* <TryWordAnimate Word={"Full Stack Developer"} /> */}
             <img
               className="w-full h-full border border-black shadow-[inset_10px_10px_350px_15px_rgba(0,0,0,0.4)]"
-              src="../public/images/quote.jpg"
+              src="./images/quote.jpg"
               alt=""
             />
           </div>

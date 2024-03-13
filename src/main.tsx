@@ -12,16 +12,16 @@ import Projects from './Projects/Projects.tsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path='/' element={<App/>}>
-        <Route path='/' element={<Home/>}/>
-        <Route path='project' element={<Projects/>}/>
-        <Route path='about' element={<About/>}/>
-        <Route path='contact' element={<Contact/>}/>
-        <Route path='github' element={<Github/>}/>
+      <Route path="/portpholio/" element={<App />}>
+        <Route path="/portpholio/" element={<Home />} />
+        <Route path="project" element={<Projects />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="github" element={<Github />} />
       </Route>
     </Route>
   )
-)
+);
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
