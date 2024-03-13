@@ -83,11 +83,11 @@ const Navbar = () => {
               className="hover:underline"
             >
               <NavLink
-                className={({ isActive }) => [
-                  isActive
-                    ? "dark:text-[#facc15] text-[#7c3aed] underline"
-                    : "dark:text-[white] text-[#171717]",
-                ]}
+                // className={({ isActive }) => [
+                //   isActive
+                //     ? "dark:text-[#facc15] text-[#7c3aed] underline"
+                //     : "dark:text-[white] text-[#171717]",
+                // ]}
                 key={itemId.toString()}
                 to={item.link}
               >

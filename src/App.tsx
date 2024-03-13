@@ -3,7 +3,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import { SparklesCore } from "./components/sparkles";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { Suspense } from "react";
+// import React, { Suspense } from "react";
 // const Outlet:{} = React.lazy(() => import("react-router-dom"));
 
 function App() {

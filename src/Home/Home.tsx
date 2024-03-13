@@ -1,15 +1,15 @@
-import { Block } from "@react-three/fiber/dist/declarations/src/core/utils";
+// import { Block } from "@react-three/fiber/dist/declarations/src/core/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Suspense, useRef } from "react";
 // import HeroModel from '../components/models/HeroModel'
 const HeroModel = React.lazy(() => import("../components/models/HeroModel"));
 import Marquee from "react-fast-marquee";
-import AnimateFont from "../components/AnimateFont";
-import TryWordAnimate from "../components/TryWordAnimate";
-import HoverSocial from "./HeroSection/HoverSocial";
+// import AnimateFont from "../components/AnimateFont";
+// import TryWordAnimate from "../components/TryWordAnimate";
+// import HoverSocial from "./HeroSection/HoverSocial";
 
 const Home = () => {
-  const scroll = useRef();
+  const scroll:any = useRef();
   return (
     <>
       <div
@@ -23,7 +23,8 @@ const Home = () => {
             animate={{ display: "none" }}
             transition={{ duration: 0.2, delay: 15 }}
           >
-            <AnimateFont/>
+            {/* <AnimateFont/> */}
+            <h1>Hii I am Krishna</h1>
           </motion.div>
         </motion.div>
         <motion.div
