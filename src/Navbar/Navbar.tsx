@@ -12,22 +12,22 @@ const Navbar = () => {
   const navItems: object[] = [
     {
       name: "Home",
-      link: "/",
+      link: "portpholio/",
       Ikon: <i className="fa-regular fa-house"></i>,
     },
     {
       name: "Projects",
-      link: "/project",
+      link: "portpholio/project",
       Ikon: <i className="fa-regular fa-rectangle-vertical-history"></i>,
     },
     {
       name: "About",
-      link: "/about",
+      link: "portpholio/about",
       Ikon: <i className="fa-regular fa-address-card"></i>,
     },
     {
       name: "Github",
-      link: "/github",
+      link: "portpholio/github",
       Ikon: <i className="fa-brands fa-github"></i>,
     },
   ];
