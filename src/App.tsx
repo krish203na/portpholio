@@ -3,10 +3,28 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import { SparklesCore } from "./components/sparkles";
 import { AnimatePresence, motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import Lenis from "@studio-freight/lenis/types";
 // import React, { Suspense } from "react";
 // const Outlet:{} = React.lazy(() => import("react-router-dom"));
 
 function App() {
+
+  useGSAP(() => {
+    const lenis = new Lenis();
+
+    // lenis.on("scroll", (e) => {
+    //   // console.log(e);
+    // });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  });
+
   return (
     <>
       <AnimatePresence>
