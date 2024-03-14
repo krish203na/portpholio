@@ -12,29 +12,29 @@ const Navbar = () => {
   const navItems: object[] = [
     {
       name: "Home",
-      link: "portpholio/",
+      link: "/portpholio/",
       Ikon: <i className="fa-regular fa-house"></i>,
     },
     {
       name: "Projects",
-      link: "portpholio/project",
+      link: "/portpholio/project",
       Ikon: <i className="fa-regular fa-rectangle-vertical-history"></i>,
     },
     {
       name: "About",
-      link: "portpholio/about",
+      link: "/portpholio/about",
       Ikon: <i className="fa-regular fa-address-card"></i>,
     },
     {
       name: "Github",
-      link: "portpholio/github",
+      link: "/portpholio/github",
       Ikon: <i className="fa-brands fa-github"></i>,
     },
   ];
 
   const { scrollYProgress } = useScroll();
 
-  const [visible, setVisible]: [boolean, Function] = useState(true);
+  const [visible, setVisible]: [boolean, Function] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -76,18 +76,21 @@ const Navbar = () => {
           {navItems.map((item: any, itemId: Number) => (
             <motion.div
               key={itemId.toString()}
-              animate={{ opacity: visible ? 1 : 0 }}
-              initial={{ opacity: 0 }}
+              animate={{
+                display: visible ? "block" : "none",
+                opacity: visible ? 1 : 0,
+              }}
+              initial={{ display: "none",opacity:0 }}
               transition={{ duration: 1 }}
-              whileHover={{ opacity: 1 }}
+              whileHover={{ display: "block", opacity:1 }}
               className="hover:underline"
             >
               <NavLink
-                // className={({ isActive }) => [
-                //   isActive
-                //     ? "dark:text-[#facc15] text-[#7c3aed] underline"
-                //     : "dark:text-[white] text-[#171717]",
-                // ]}
+                className={`${({ isActive }: { isActive: boolean }) => [
+                  isActive
+                  ? "dark:text-[white] text-[#171717]"
+                    : "dark:text-[#facc15]  underline"
+                ]}`}
                 key={itemId.toString()}
                 to={item.link}
               >

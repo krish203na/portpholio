@@ -18,6 +18,7 @@
     "@splinetool/loader": "^1.0.63",
     "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.0.66",
     "@tabler/icons-react": "^2.47.0",
     "@tsparticles/engine": "^3.3.0",
     "@tsparticles/react": "^3.0.0",
