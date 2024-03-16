@@ -21,6 +21,7 @@
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.66",
     "@studio-freight/lenis": "^1.0.39",
+    "@studio-freight/react-lenis": "^0.0.46",
     "@tabler/icons-react": "^2.47.0",
     "@tsparticles/engine": "^3.3.0",
     "@tsparticles/react": "^3.0.0",

@@ -1,8 +1,9 @@
 // import React from "react";
 
-const TryWordAnimate = (props:any) => {
+const TryWordAnimate = (props:{name:string}) => {
   
-const words = props.word.split(" ");
+  console.log(props.name)
+const words = props.name.split("");
   return (
     <div>
       {words.map((e:any, i:any) => {

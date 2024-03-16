@@ -11,6 +11,9 @@
   font-family: "Madimi One", sans-serif;
 
 }
+#Home{
+  overflow: hidden !important;
+}
 *{
   background: transparent;
 }
@@ -372,4 +375,11 @@
 }
 .logo{
   font-family: "Protest Guerrilla", sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+.tapestry
+{
+  font-family: "Tapestry", serif;
 }
