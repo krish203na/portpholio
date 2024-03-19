@@ -1,6 +1,4 @@
 import React, { Suspense } from "react";
-import { findAllInRenderedTree } from "react-dom/test-utils";
-import { rotate } from "three/examples/jsm/nodes/Nodes.js";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 

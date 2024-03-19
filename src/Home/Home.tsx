@@ -4,9 +4,9 @@ import HeroSection from "./HeroSection/HeroSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { AnimatePresence, motion } from "framer-motion";
+import {motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
+import Skill3D from "./HeroSection/Skill3D"
 // import { useScroll } from "framer-motion";
 // import { useEffect } from "react";
 
@@ -61,6 +61,10 @@ const Home = () => {
         <div className="blow sm:w-[100vw] w-[100vw] border border-black sm:h-[100vh] flex justify-start items-center overflow-hidden">
           <AnimateText text={"I am  Passionate  Full Stack  Developer"} />
         </div>
+
+        <div>
+          <Skill3D/>
+        </div>
       </div>
     </>
   );
@@ -95,7 +99,7 @@ const AnimateText = (props: { text: String }) => {
 
         if (blury != null && blury.id != "wordanimataBlock0") {
           blury.style.transitionDuration = "0.6s";
-          blury.style.filter = "blur(16px)";
+          blury.style.filter = "blur(22px)";
           console.log(i)
         }
       }

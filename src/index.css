@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body{
-  background-color: black;
-} */
+body{
+  scroll-behavior: smooth;
+}
 
 .myFont {
 
@@ -382,4 +382,9 @@ html{
 .tapestry
 {
   font-family: "Tapestry", serif;
+}
+.skill3d
+{
+  perspective-origin: left;
+  perspective: 100px;
 }
