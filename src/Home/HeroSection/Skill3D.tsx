@@ -304,7 +304,23 @@ const Skill3D = () => {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.to(".skill3D", { scrollTrigger: { trigger: ".skill3D",start:"top top", end:"50% top", markers:false, pin:true} });
+    gsap.to(".skill3D", { scrollTrigger: { trigger: ".skill3D",start:"top top", end:"100% top", markers:false, pin:true} });
+
+    gsap.from(
+      "#SkillWord",
+      {
+        scrollTrigger: {
+          trigger: "#SkillWord",
+          start: "top 80%",
+          end: "600% 80%",
+          markers: true,
+          toggleActions:"play none reverse none",
+          scrub:.5
+        },
+        marginTop:0,
+        y: -200,
+      }
+    );
 
     // gsap.to(".bubble1", {
     //   scrollTrigger: {
@@ -654,26 +670,32 @@ const Skill3D = () => {
     
   ];
 
+
+
   const referense = useRef(null)
   return (
-    <motion.div className="skill3D w-full h-screen flex justify-end items-center flex-col relative">
-      <h1 className="text-9xl">Frontend</h1>
-      <h1 className="text-9xl">Skills</h1>
+    <motion.div className="skill3D w-full h-screen flex justify-center items-center flex-col relative">
+      <div
+        id="SkillWord"
+        className="translate-y-[30vh] flex justify-center items-center flex-col"
+      >
+        <h1 className="text-9xl font-bold">Skills</h1>
+        <p>I acquired</p>
+      </div>
       <motion.div
         ref={referense}
         className="bubblebox flex border border-white gap-[2vw] flex-wrap absolute justify-start items-start h-screen w-[95%] bottom-[-100vh]"
       >
         <div className="flex w-full justify-center items-start h-[50%] flex-col">
-          <div className='flex w-full justify-center items-start '>
-
-          {bubbleSkill(SkillArray1,referense,1)}
+          <div className="flex w-full justify-center items-start ">
+            {bubbleSkill(SkillArray1, referense, 1)}
           </div>
-          <div className='flex w-full justify-center items-start '>
-          {bubbleSkill(SkillArray2,referense,2)}
+          <div className="flex w-full justify-center items-start ">
+            {bubbleSkill(SkillArray2, referense, 2)}
           </div>
-          <div className='flex w-full justify-center items-start '>
-          {bubbleSkill(SkillArray3,referense,3)}
-</div>
+          <div className="flex w-full justify-center items-start ">
+            {bubbleSkill(SkillArray3, referense, 3)}
+          </div>
           {/* <motion.div
             drag
             dragPropagation={true}
@@ -914,9 +936,12 @@ const bubbleSkill = (
             // width: 200,
             transformStyle: "preserve-3d",
           }}
-          whileDrag={{ scale: 1.5, cursor: "grabbing" }}
+          whileDrag={{ scale: 1.5, cursor: "grabbing"}}
+          onDragStart={(info)=>{return console.log(info) }}
+          // ondrag
           dragConstraints={referense}
           dragElastic={1}
+          
           className={`bubble z-[50] inline-block bubble${i + "" + t} ${
             count < 8 ? "mx-[1.5vw]" : count < 14 ? "mx-[2.7vw]" : "mx-[4.5vw]"
           } my h-[8vw] w-[8vw] relative flex justify-center flex-col items-center bottom-0`}
@@ -930,7 +955,7 @@ const bubbleSkill = (
             src={e.img}
             alt="image is loading...."
           />
-          {/* <p className="text-sm ">{e.name}</p> */}
+          <p className="text-[0.8vw] ">{e.name}</p>
         </motion.div>
         {/* {count == 3? <br></br>: <h1>ok</h1>} */}
       </>

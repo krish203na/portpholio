@@ -36,7 +36,9 @@ const HeroSection = () => {
               className="md:w-full sm:w-[130vw] w-[200vw] absolute z-50"
             >
               <HeroModel />
+
             </motion.div>
+
           </AnimatePresence>
         </Suspense>
         <div className="absolute sm:top-[3vh] top-[6vh] left-[3vw]">

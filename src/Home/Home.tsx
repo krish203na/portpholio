@@ -165,12 +165,12 @@ const AnimateText = (props: { text: String }) => {
             <div
               id={`wordanimataBlock` + i}
               key={`animatediv` + i}
-              className="wordanimataBlock inline-block overflow-hidden"
+              className="wordanimataBlock flex overflow-hidden"
             >
               <motion.h1
                 id={`wordAnimation` + i}
                 key={`animateWord` + i}
-                className="wordAnimation sm:text-[10vw] text-7xl sm:leading-none font-bold w-full"
+                className="wordAnimation sm:text-[10vw] text-7xl sm:leading-none font-bold "
                 whileHover={{}}
                 onHoverStart={() => {
                   blurAnimate(`wordanimataBlock` + i, i);
