@@ -917,7 +917,7 @@ const bubbleSkill = (
           // markers: true,
           // scrub: 1
         },
-        bottom: 600,
+        bottom: "90vh",
         duration: 3,
         ease: "bounce.out",
         delay: Math.random() * 2,
