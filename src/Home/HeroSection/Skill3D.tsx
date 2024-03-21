@@ -892,7 +892,7 @@ const bubbleSkill = (
           start: "top top",
           end: "bottom bottom",
           toggleActions: "play none reverse none",
-          markers: true,
+          // markers: true,
           // scrub: 1
         },
         bottom: 600,

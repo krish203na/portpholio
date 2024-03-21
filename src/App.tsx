@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import { SparklesCore } from "./components/sparkles";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 // import { useGSAP } from "@gsap/react";
 // import Lenis from "@studio-freight/lenis/types";
 // import gsap from "gsap";
@@ -31,7 +31,8 @@ function App() {
   return (
     <>
       {/* <ReactLenis ref={lenisRef } options={window} root={false} autoRaf={false}> */}
-        {/* <AnimatePresence>
+        <AnimatePresence>
+        {/* 
           <motion.div
             // initial={{ width: "60px " }}
             // animate={{ width: "100vw" }}
@@ -44,7 +45,7 @@ function App() {
                 background="transparent"
                 minSize={1}
                 maxSize={0.1}
-                particleDensity={10}
+                particleDensity={50}
                 className="w-full h-full absolute top-0 z-0"
                 particleColor="#fbfbfb"
               />
@@ -54,7 +55,8 @@ function App() {
             <Outlet />
             <Footer />
           {/* </motion.div>
-        </AnimatePresence> */}
+         */}
+         </AnimatePresence>
       {/* </ReactLenis> */}
       {/* )}  */}
     </>
