@@ -52,18 +52,20 @@ const Home = () => {
 
   return (
     <>
-      <div id="Home"
-      className="w-[100vw] h-full overflow-hidden">
+      <div
+        id="Home"
+        className="w-full text-white h-full overflow-hidden bg-gradient-to-b from-[#2a3637] from-20% via-[#2f4749] via-30% to-[#2a3637] to-70%"
+      >
         <div className="">
           <HeroSection />
         </div>
 
-        <div className="blow sm:w-[100vw] w-[100vw] border border-black sm:h-[100vh] flex justify-start items-center overflow-hidden">
+        <div className="blow sm:w-[100vw] w-[100vw] sm:h-[100vh] flex justify-start items-center overflow-hidden">
           <AnimateText text={"I am  Passionate  Full Stack  Developer"} />
         </div>
 
         <div>
-          <Skill3D/>
+          <Skill3D />
         </div>
       </div>
     </>

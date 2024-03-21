@@ -33,7 +33,7 @@ const HeroSection = () => {
           <AnimatePresence>
             <motion.div
               // id="HomeHero"
-              className="md:w-full sm:w-[130vw] w-[200vw] absolute z-50 border border-yellow-500"
+              className="md:w-full sm:w-[130vw] w-[200vw] absolute z-50"
             >
               <HeroModel />
             </motion.div>
@@ -46,16 +46,16 @@ const HeroSection = () => {
         </div>
         <div
           ref={scroll}
-          className="w-full absolute bottom-[-30px] fontScroll "
+          className="w-[55%] bottom-[-30px] fontScroll "
         >
-          <Marquee className="p-0" autoFill={true} speed={180}>
+          {/* <Marquee className="p-0 m-0 static" autoFill={true} speed={180}>
             <div className="text-[30vh] font-bold text-[#1d2d2ecb] ">
               <h1 className="p-[-10px] m-0 myFont">
                 Krishna Ashok Panchal{" "}
                 <span className="text-transparent">.</span>
               </h1>
             </div>
-          </Marquee>
+          </Marquee> */}
         </div>
         <div className="z-20 border-3 md:top-[16vh] top-[15vh] md:left-[15vw] left-[5vw]  border-[10px] border-black absolute md:h-[30vh] sm:h-[30vw] h-[12vh] shadow-lg shadow-black w-auto flex items-center text-8xl">
           <img

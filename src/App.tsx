@@ -31,13 +31,13 @@ function App() {
   return (
     <>
       {/* <ReactLenis ref={lenisRef } options={window} root={false} autoRaf={false}> */}
-        <AnimatePresence>
+        {/* <AnimatePresence>
           <motion.div
             // initial={{ width: "60px " }}
             // animate={{ width: "100vw" }}
             // transition={{ duration: 2 }}
             className="w-[100vw] h-full bg-[#f5b9b1] border border-red-500 text-[#171717] font-semibold -z-50 dark:bg-gradient-to-b from-[#2a3637] from-20% via-[#2f4749] via-30% to-[#2a3637] to-70% dark:text-white shadow-[inset_10px_0px_350px_0px_rgba(0,0,0,0.4)] min-w-[100vw] min-h-[100vh] overflow-hidden"
-          >
+          > */}
             <div className="w-full absolute inset-0 h-full z-0">
               <SparklesCore
                 id="tsparticlesfullpage"
@@ -53,8 +53,8 @@ function App() {
 
             <Outlet />
             <Footer />
-          </motion.div>
-        </AnimatePresence>
+          {/* </motion.div>
+        </AnimatePresence> */}
       {/* </ReactLenis> */}
       {/* )}  */}
     </>
