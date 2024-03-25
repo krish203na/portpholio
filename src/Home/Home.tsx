@@ -1,16 +1,18 @@
 // import React, { Suspense } from "react";
 // import HomeAboutSection from "./HeroSection/HomeAboutSection";
-import HeroSection from "./HeroSection/HeroSection";
+// import HeroSection from "./HeroSection/HeroSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Skill3D from "./HeroSection/Skill3D";
 import HomeProjects from "./HeroSection/HomeProjects";
 import { CardBody, CardContainer } from "../components/3d-card";
 // import BackgroundGradientAnimation from "../components/Background-gradient-animation";
 import HomeConnect from "./HeroSection/HomeConnect";
+import React from "react";
+const HeroSection = React.lazy(() => import("./HeroSection/HeroSection"));
 // import { useScroll } from "framer-motion";
 // import { useEffect } from "react";
 
@@ -139,7 +141,9 @@ const Home = () => {
           </h1>
         </div>
         <div className="relative top-0">
+          <Suspense fallback={null}>
           <HeroSection />
+          </Suspense>
         </div>
 
         <div className="blow sm:w-[100vw] w-[100vw] sm:h-[100vh] flex justify-start items-center overflow-hidden">
