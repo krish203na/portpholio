@@ -1,11 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { AnimatePresence, motion, useMotionValue } from "framer-motion";
-import { CardBody, CardContainer, CardItem } from "../../components/3d-card";
-import { TextGenerateEffect } from "../../components/text-generate-effect";
-import { NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { motion, } from "framer-motion";
+// import { CardBody, CardContainer, CardItem } from "../../components/3d-card";
+// import { TextGenerateEffect } from "../../components/text-generate-effect";
+// import { NavLink } from "react-router-dom";
+// import React, { useEffect, useState } from "react";
 import ProjectTile from "./homeproject/ProjectTile";
 
 const HomeProjects = () => {

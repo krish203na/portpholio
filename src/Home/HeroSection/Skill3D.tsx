@@ -295,7 +295,7 @@ import { useGSAP } from '@gsap/react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, } from 'react'
 
 const Skill3D = () => {
   
@@ -910,8 +910,6 @@ const bubbleSkill = (
 ) => {
 
   // setCount((count)=>count +1)
-  let bubbleX;
-  let bubbleY;
   return props.map((e, i) => {
 
     bubblesArray.push(`bubble${i + "" + t}`);
@@ -934,16 +932,16 @@ const bubbleSkill = (
         // position:"relative"
       });
 
-bubblesArray.map((e, i) => {
-   bubbleX = document.getElementsByClassName(e)[0].getBoundingClientRect().x;
-   bubbleY = document.getElementsByClassName(e)[0].getBoundingClientRect().y;
+// bubblesArray.map((e, i) => {
+//    bubbleX = document.getElementsByClassName(e)[0].getBoundingClientRect().x;
+//    bubbleY = document.getElementsByClassName(e)[0].getBoundingClientRect().y;
 
-  // console.log("X: " + bubbleX + " y: " + bubbleY);
-});
+//   // console.log("X: " + bubbleX + " y: " + bubbleY);
+// });
 
-const updateBubbleCoordinates = ()=>{
+// const updateBubbleCoordinates = ()=>{
 
-}
+// }
 
     });
 

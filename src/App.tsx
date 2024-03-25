@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import { SparklesCore } from "./components/sparkles";
+// import { SparklesCore } from "./components/sparkles";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 // import { useGSAP } from "@gsap/react";
 // import Lenis from "@studio-freight/lenis/types";
 import gsap from "gsap";
