@@ -3,9 +3,12 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import { SparklesCore } from "./components/sparkles";
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
 // import { useGSAP } from "@gsap/react";
 // import Lenis from "@studio-freight/lenis/types";
-// import gsap from "gsap";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 // import { useEffect, useRef } from "react";
 // import { ReactLenis } from "@studio-freight/react-lenis";
 // import Home from "./Home/Home";
@@ -13,8 +16,26 @@ import { AnimatePresence } from "framer-motion";
 // const Outlet:{} = React.lazy(() => import("react-router-dom"));
 
 function App() {
+  
+  const targetRef = useRef<HTMLDivElement>(null);
 
-  // const lenisRef :any = useRef();
+  useGSAP(()=>{
+
+    gsap.registerPlugin(ScrollToPlugin);
+
+
+   if (targetRef.current) {
+     gsap.to(window, {
+       duration: 2, // Duration of the animation
+       scrollTo: {
+         y: targetRef.current.offsetTop,
+         autoKill: false,
+       },
+       ease: "power4.out", // Easing function
+     });
+   }
+  })
+    // const lenisRef :any = useRef();
 
   // useEffect(() => {
   //   function update(time:any) {
@@ -39,7 +60,7 @@ function App() {
             // transition={{ duration: 2 }}
             className="w-[100vw] h-full bg-[#f5b9b1] border border-red-500 text-[#171717] font-semibold -z-50 dark:bg-gradient-to-b from-[#2a3637] from-20% via-[#2f4749] via-30% to-[#2a3637] to-70% dark:text-white shadow-[inset_10px_0px_350px_0px_rgba(0,0,0,0.4)] min-w-[100vw] min-h-[100vh] overflow-hidden"
           > */}
-            <div className="w-full absolute inset-0 h-full z-0">
+            {/* <div ref={targetRef} className="w-full absolute inset-0 h-full z-0">
               <SparklesCore
                 id="tsparticlesfullpage"
                 background="transparent"
@@ -49,7 +70,7 @@ function App() {
                 className="w-full h-full absolute top-0 z-0"
                 particleColor="#fbfbfb"
               />
-            </div>
+            </div> */}
             <Navbar />
 
             <Outlet />

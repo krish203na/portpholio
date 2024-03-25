@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 // import { ScrollTrigger } from "gsap/all";
 import React, { Suspense, useRef } from "react";
 import Marquee from "react-fast-marquee";
+// import HeroModel from "../../components/models/HeroModel";
 const HeroModel = React.lazy(() => import("../../components/models/HeroModel"));
 
 const HeroSection = () => {
@@ -33,7 +34,7 @@ const HeroSection = () => {
           <AnimatePresence>
             <motion.div
               // id="HomeHero"
-              className="md:w-full sm:w-[130vw] w-[200vw] absolute z-50"
+              className="md:w-full sm:w-[130vw] w-[100vw] absolute z-50"
             >
               <HeroModel />
 
@@ -41,18 +42,14 @@ const HeroSection = () => {
 
           </AnimatePresence>
         </Suspense>
-        <div className="absolute sm:top-[3vh] top-[6vh] left-[3vw]">
-          <h1 className="logo md:text-[2rem] text-[1.5rem] tracking-wider">
-            KRISH
-          </h1>
-        </div>
+        
         <div
           ref={scroll}
-          className="w-[100%] absolute bottom-[0px] fontScroll "
+          className="w-[100%] absolute bottom-[0px] fontScroll"
         >
           <Marquee className="p-0 m-0 static" autoFill={true} speed={180}>
             <div className="text-[30vh] font-bold text-[#1d2d2ecb] ">
-              <h1 className="p-[-10px] m-0 myFont">
+              <h1 className="p-[-10px] m-0 myFont w-full">
                 Krishna Ashok Panchal{" "}
                 <span className="text-transparent">.</span>
               </h1>
@@ -77,8 +74,8 @@ const HeroSection = () => {
             Developer
           </h1>
         </div>
-        <div className="z-40 rotate-90 right-[1vw] bottom-2 absolute h-[10vw] w-[10vw] flex items-center text-3 font-thin">
-          <h1>Scroll Down -{">"}</h1>
+        <div className="z-40  right-0 bottom-[15vh] absolute flex items-center animate-pulse text-lg rotate-90 font-thin">
+          <h1>Scroll Down Slowly -{">"}</h1>
         </div>
       </div>
     </>

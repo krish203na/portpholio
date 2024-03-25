@@ -4,9 +4,13 @@ import HeroSection from "./HeroSection/HeroSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import Skill3D from "./HeroSection/Skill3D"
+import Skill3D from "./HeroSection/Skill3D";
+import HomeProjects from "./HeroSection/HomeProjects";
+import { CardBody, CardContainer } from "../components/3d-card";
+// import BackgroundGradientAnimation from "../components/Background-gradient-animation";
+import HomeConnect from "./HeroSection/HomeConnect";
 // import { useScroll } from "framer-motion";
 // import { useEffect } from "react";
 
@@ -50,13 +54,91 @@ const Home = () => {
   //   );
   // });
 
+  
+
   return (
     <>
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x: "-100vw" }}
+        transition={{ duration: 0.4, delay: 10, ease:"easeInOut" }}
+        className="w-full h-screen bg-white z-[1000] absolute flex-col flex justify-center items-center"
+      >
+        <motion.div
+          // initial={{ x: 0 }}
+          // animate={{ x: "100vw" }}
+          // transition={{ duration: 0.6, delay: 8}}
+          className="w-[50%] h-[]"
+        >
+          <h1 className="text-black text-[10vw] font-bold logo flex justify-center items-center gap-[10px]  overflow-hidden">
+            <motion.span
+              className="h-full"
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeInOut", duration: .5 }}
+            >
+              K
+            </motion.span>
+            <motion.span
+              className="h-full"
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeInOut", duration: .5, delay: 0.1 }}
+            >
+              R
+            </motion.span>
+            <motion.span
+              className="h-full"
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeInOut", duration: .5, delay: 0.16 }}
+            >
+              I
+            </motion.span>
+            <motion.span
+              className="h-full"
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeInOut", duration: .5, delay: 0.24 }}
+            >
+              S
+            </motion.span>
+            <motion.span
+              className="h-full"
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeInOut", duration: .5, delay: 0.32 }}
+            >
+              H
+            </motion.span>
+          </h1>
+        </motion.div>
+        <div>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              repeat: 30,
+              ease: "easeInOut",
+              repeatType: "reverse",
+            }}
+            className="text-black font-semibold text-xl"
+          >
+            loading....
+          </motion.h1>
+        </div>
+      </motion.div>
       <div
         id="Home"
         className="w-full text-white h-full overflow-hidden bg-gradient-to-b from-[#2a3637] from-20% via-[#2f4749] via-30% to-[#2a3637] to-70%"
       >
-        <div className="">
+        <div className="fixed mix-blend-difference sm:top-[3vh] top-[6vh] left-[3vw] z-[500]">
+          <h1 className="logo md:text-[3vw] text-[1.5rem] tracking-wider">
+            KRISH
+          </h1>
+        </div>
+        <div className="relative top-0">
           <HeroSection />
         </div>
 
@@ -67,6 +149,12 @@ const Home = () => {
         <div>
           <Skill3D />
         </div>
+
+        <div>
+          <HomeProjects />
+        </div>
+
+        <HomeConnect />
       </div>
     </>
   );
@@ -75,25 +163,22 @@ const Home = () => {
 export default Home;
 
 const AnimateText = (props: { text: String }) => {
-
-  const [selected,setSelected] = useState("<-- Hover on it")
+  const [selected, setSelected] = useState("<-- Hover on it");
 
   const BlurVerify: string[] = [];
   const selectedDescription: string[] = [
-    "",
+    "I am Krishna Ashok Panchal from Mumbai, India. I am a 24 yrs.",
     '"I put my Heart & Soul into my Work" and always willing to go the extra mile to deliver the best result", a dedicated developer fueled by a passion for innovation and problem-solving',
     `"I'm, a versatile full stack developer adept at building robust and dynamic web applications", From crafting responsive user interfaces to architecting scalable backend systems.`,
     `"I'm, a Enthusiastic developer known for crafting immersive digital experiences", I thrive on turning concepts into impactful solutions."`,
   ];
 
-
-
-  const blurAnimate = (target: string, targetNo:number) => {
-    setSelected(selectedDescription[targetNo])
-    const set = document.getElementById("selectedWord")
-  if(set !== null){
-    set.style.transitionDuration="0.5s"
-  }
+  const blurAnimate = (target: string, targetNo: number) => {
+    setSelected(selectedDescription[targetNo]);
+    const set = document.getElementById("selectedWord");
+    if (set !== null) {
+      set.style.transitionDuration = "0.5s";
+    }
     BlurVerify.map((e, i) => {
       console.log(e);
       if (target !== e) {
@@ -102,7 +187,7 @@ const AnimateText = (props: { text: String }) => {
         if (blury != null && blury.id != "wordanimataBlock0") {
           blury.style.transitionDuration = "0.6s";
           blury.style.filter = "blur(22px)";
-          console.log(i)
+          console.log(i);
         }
       }
     });
@@ -116,7 +201,7 @@ const AnimateText = (props: { text: String }) => {
 
         if (blury != null && blury.id != "wordAnimation0") {
           blury.style.filter = "blur(0px)";
-          setSelected("<-- Hover on it")
+          setSelected("<-- Hover on it");
         }
       }
     });
@@ -126,16 +211,13 @@ const AnimateText = (props: { text: String }) => {
 
   return (
     <>
-      <div className="flex flex-col ml-[3vw]">
+      <div className="flex flex-col ml-[3vw] min-h-10vh]">
         {props.text.split("  ").map((e, i) => {
-
-          useEffect(()=>{
-
-            gsap.fromTo("#selectedWord",{x:150},{x:0 , duration:1});
-          })
+          useEffect(() => {
+            gsap.fromTo("#selectedWord", { x: 150 }, { x: 0, duration: 1 });
+          });
           useGSAP(() => {
             gsap.registerPlugin(ScrollTrigger);
-
 
             gsap.fromTo(
               `#wordAnimation${+i}`,
@@ -153,7 +235,7 @@ const AnimateText = (props: { text: String }) => {
                 },
                 y: 0,
                 duration: 0.6,
-                ease: "circ",
+                // ease: "circ",
                 // opacity:1
               }
             );
@@ -189,13 +271,26 @@ const AnimateText = (props: { text: String }) => {
           );
         })}
       </div>
-      <div className="w-[50%] h-full relative">
+      <div className="w-[50%] h-full p-[5vh] flex justify-center items-start relative">
+        <CardContainer className="inter-var">
+          <CardBody className="bg-transperent relative group/card dark:bg-transperent border-transperent w-auto rounded-xl p-6   ">
+            <motion.img
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              src="./images/Krishna.png"
+              height="1000px"
+              width="1000px"
+              className=" h-[60vh] w-auto object-cover rounded-xl "
+            />
+          </CardBody>
+        </CardContainer>
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 5 }}
           id="selectedWord"
-          className="absolute bottom-[15vh] w-[70%] text-center right-[2vw] text-[1.5vw] translate-x-[100px]"
+          className="absolute backdrop-blur-sm bottom-[15vh] w-[70%] text-center text-[1.5vw] translate-x-[100px]"
         >
           {selected}
         </motion.h1>

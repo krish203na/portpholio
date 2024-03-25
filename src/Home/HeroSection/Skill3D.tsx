@@ -295,16 +295,17 @@ import { useGSAP } from '@gsap/react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Skill3D = () => {
-
+  
+  let bubblesArray:string[]= []
 
   useGSAP(()=>{
 
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.to(".skill3D", { scrollTrigger: { trigger: ".skill3D",start:"top top", end:"100% top", markers:false, pin:true} });
+    gsap.to(".skill3D", { scrollTrigger: { trigger: ".skill3D",start:"top top", end:"90% top", markers:false, pin:true} });
 
     gsap.from(
       "#SkillWord",
@@ -312,15 +313,19 @@ const Skill3D = () => {
         scrollTrigger: {
           trigger: "#SkillWord",
           start: "top 80%",
-          end: "600% 80%",
-          markers: true,
+          end: "550% 80%",
+          markers: false,
           toggleActions:"play none reverse none",
           scrub:.5
         },
         marginTop:0,
-        y: -200,
+        y: -250,
       }
     );
+
+console.log(bubblesArray)
+
+
 
     // gsap.to(".bubble1", {
     //   scrollTrigger: {
@@ -677,24 +682,24 @@ const Skill3D = () => {
     <motion.div className="skill3D w-full h-screen flex justify-center items-center flex-col relative">
       <div
         id="SkillWord"
-        className="translate-y-[30vh] flex justify-center items-center flex-col"
+        className="translate-y-[30vh] flex justify-center items-center overflow-hidden flex-col"
       >
-        <h1 className="text-9xl font-bold">Skills</h1>
+        <motion.h1 initial={{x:"90%",opacity:0}} whileInView={{x:0,opacity:1}} transition={{duration:1}} className="text-9xl font-bold">Skills</motion.h1>
         <p>I acquired</p>
       </div>
       <motion.div
         ref={referense}
-        className="bubblebox flex border border-white gap-[2vw] flex-wrap absolute justify-start items-start h-screen w-[95%] bottom-[-100vh]"
+        className="bubblebox flex gap-[2vw] flex-wrap absolute justify-start items-start h-screen w-[95%] bottom-[-100vh]"
       >
         <div className="flex w-full justify-center items-start h-[50%] flex-col">
           <div className="flex w-full justify-center items-start ">
-            {bubbleSkill(SkillArray1, referense, 1)}
+            {bubbleSkill(SkillArray1, referense, 1, bubblesArray)}
           </div>
           <div className="flex w-full justify-center items-start ">
-            {bubbleSkill(SkillArray2, referense, 2)}
+            {bubbleSkill(SkillArray2, referense, 2, bubblesArray)}
           </div>
           <div className="flex w-full justify-center items-start ">
-            {bubbleSkill(SkillArray3, referense, 3)}
+            {bubbleSkill(SkillArray3, referense, 3, bubblesArray)}
           </div>
           {/* <motion.div
             drag
@@ -900,18 +905,22 @@ export default Skill3D
 const bubbleSkill = (
   props: { name: string; img: string }[],
   referense: React.MutableRefObject<null>,
-  t:number
+  t:number,
+  bubblesArray:string[]
 ) => {
 
   // setCount((count)=>count +1)
-  let count = 0
+  let bubbleX;
+  let bubbleY;
   return props.map((e, i) => {
 
+    bubblesArray.push(`bubble${i + "" + t}`);
+    
     useGSAP(() => {
       gsap.to(`.bubble${i + "" + t}`, {
         scrollTrigger: {
           trigger: ".skill3D",
-          start: "top top",
+          start: "-20% top",
           end: "bottom bottom",
           toggleActions: "play none reverse none",
           // markers: true,
@@ -924,7 +933,21 @@ const bubbleSkill = (
 
         // position:"relative"
       });
+
+bubblesArray.map((e, i) => {
+   bubbleX = document.getElementsByClassName(e)[0].getBoundingClientRect().x;
+   bubbleY = document.getElementsByClassName(e)[0].getBoundingClientRect().y;
+
+  // console.log("X: " + bubbleX + " y: " + bubbleY);
+});
+
+const updateBubbleCoordinates = ()=>{
+
+}
+
     });
+
+    
     return (
       <>
         <motion.div
@@ -937,14 +960,9 @@ const bubbleSkill = (
             transformStyle: "preserve-3d",
           }}
           whileDrag={{ scale: 1.5, cursor: "grabbing"}}
-          onDragStart={(info)=>{return console.log(info) }}
-          // ondrag
           dragConstraints={referense}
-          dragElastic={1}
           
-          className={`bubble z-[50] inline-block bubble${i + "" + t} ${
-            count < 8 ? "mx-[1.5vw]" : count < 14 ? "mx-[2.7vw]" : "mx-[4.5vw]"
-          } my h-[8vw] w-[8vw] relative flex justify-center flex-col items-center bottom-0`}
+          className={`bubble z-[50] inline-block bubble${i + "" + t} mx-[1.5vw] h-[8vw] w-[8vw] relative flex justify-center flex-col items-center bottom-0`}
         >
           <span></span>
           <span></span>

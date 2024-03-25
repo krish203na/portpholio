@@ -1,9 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'larken';
+  src: url("../public/LarkenFont/LarkenDEMO-Medium.otf");
+  font-weight: "normal";
+}
+/* @font-face {
+  font-family: 'larken';
+  src: url("../public/LarkenFont/LarkenDEMO-Bold.otf");
+  font-weight: 300;
+} */
 
 body{
   scroll-behavior: smooth;
+  /* font-family: "larken"; */
 }
 
 .myFont {
@@ -374,6 +385,8 @@ body{
   }
 }
 .logo{
+  mix-blend-mode: difference;
+  color: white;
   font-family: "Protest Guerrilla", sans-serif;
 }
 html{
@@ -409,7 +422,7 @@ html{
   rotate: 45deg;
 }
 /* .bubble span:nth-child(3){
-  border-top: .4vw solid #ff4484;
+  border: .4vw solid #ff4484;
   inset: .5vw;
   filter: blur(.4vw);
   rotate: 30deg;
@@ -420,7 +433,7 @@ html{
   left: 4vh;
   width: 2vw;
   height: 1vw;
-  filter: blur(.5vw);
+  filter: blur(.6vw);
 }
 .bubblebox{
   perspective: 1000px;
