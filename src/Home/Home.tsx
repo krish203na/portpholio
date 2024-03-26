@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Skill3D from "./HeroSection/Skill3D";
 import HomeProjects from "./HeroSection/HomeProjects";
 import { CardBody, CardContainer } from "../components/3d-card";
