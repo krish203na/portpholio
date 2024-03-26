@@ -1,6 +1,6 @@
 // import React, { Suspense } from "react";
 // import HomeAboutSection from "./HeroSection/HomeAboutSection";
-// import HeroSection from "./HeroSection/HeroSection";
+import HeroSection from "./HeroSection/HeroSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -10,9 +10,8 @@ import Skill3D from "./HeroSection/Skill3D";
 import HomeProjects from "./HeroSection/HomeProjects";
 import { CardBody, CardContainer } from "../components/3d-card";
 // import BackgroundGradientAnimation from "../components/Background-gradient-animation";
-import HomeConnect from "./HeroSection/HomeConnect";
-import React from "react";
-const HeroSection = React.lazy(() => import("./HeroSection/HeroSection"));
+// import React from "react";
+// const HeroSection = React.lazy(() => import("./HeroSection/HeroSection"));
 // import { useScroll } from "framer-motion";
 // import { useEffect } from "react";
 
@@ -63,7 +62,7 @@ const Home = () => {
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: "-100vw" }}
-        transition={{ duration: 0.4, delay: 10, ease:"easeInOut" }}
+        transition={{ duration: 0.4, delay: 7, ease: "easeInOut" }}
         className="w-full h-screen bg-white z-[1000] absolute flex-col flex justify-center items-center"
       >
         <motion.div
@@ -75,41 +74,61 @@ const Home = () => {
           <h1 className="text-black text-[10vw] font-bold logo flex justify-center items-center gap-[10px]  overflow-hidden">
             <motion.span
               className="h-full"
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeInOut", duration: .5 }}
+              initial={{ y: 160 }}
+              animate={{ y: 0 }}
+              transition={{ type: "spring", damping: 5, duration: 1 }}
             >
               K
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeInOut", duration: .5, delay: 0.1 }}
+              initial={{ y: 160 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 5,
+                duration: 1,
+                delay: 0.8,
+              }}
             >
               R
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeInOut", duration: .5, delay: 0.16 }}
+              initial={{ y: 160 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 5,
+                duration: 1,
+                delay: 1.6,
+              }}
             >
               I
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeInOut", duration: .5, delay: 0.24 }}
+              initial={{ y: 160 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 5,
+                duration: 1,
+                delay: 2.4,
+              }}
             >
               S
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeInOut", duration: .5, delay: 0.32 }}
+              initial={{ y: 160 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 5,
+                duration: 1,
+                delay: 3.2,
+              }}
             >
               H
             </motion.span>
@@ -141,9 +160,9 @@ const Home = () => {
           </h1>
         </div>
         <div className="relative top-0">
-          <Suspense fallback={null}>
+          {/* <Suspense fallback={null}> */}
           <HeroSection />
-          </Suspense>
+          {/* </Suspense> */}
         </div>
 
         <div className="blow sm:w-[100vw] w-[100vw] sm:h-[100vh] flex justify-start items-center overflow-hidden">
@@ -158,7 +177,6 @@ const Home = () => {
           <HomeProjects />
         </div>
 
-        <HomeConnect />
       </div>
     </>
   );
@@ -171,7 +189,7 @@ const AnimateText = (props: { text: String }) => {
 
   const BlurVerify: string[] = [];
   const selectedDescription: string[] = [
-    "I am Krishna Ashok Panchal from Mumbai, India. I am a 24 yrs.",
+    "I am Krishna Ashok Panchal from Mumbai, India. I am a 24 yrs Developer.",
     '"I put my Heart & Soul into my Work" and always willing to go the extra mile to deliver the best result", a dedicated developer fueled by a passion for innovation and problem-solving',
     `"I'm, a versatile full stack developer adept at building robust and dynamic web applications", From crafting responsive user interfaces to architecting scalable backend systems.`,
     `"I'm, a Enthusiastic developer known for crafting immersive digital experiences", I thrive on turning concepts into impactful solutions."`,
@@ -294,7 +312,7 @@ const AnimateText = (props: { text: String }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 5 }}
           id="selectedWord"
-          className="absolute backdrop-blur-sm bottom-[15vh] w-[70%] text-center text-[1.5vw] translate-x-[100px]"
+          className="absolute backdrop-blur-sm bottom-[10vh] w-[70%] text-center text-[1.5vw] translate-x-[100px]"
         >
           {selected}
         </motion.h1>

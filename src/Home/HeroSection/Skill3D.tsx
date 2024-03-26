@@ -918,7 +918,7 @@ const bubbleSkill = (
       gsap.to(`.bubble${i + "" + t}`, {
         scrollTrigger: {
           trigger: ".skill3D",
-          start: "-20% top",
+          start: "top top",
           end: "bottom bottom",
           toggleActions: "play none reverse none",
           // markers: true,
