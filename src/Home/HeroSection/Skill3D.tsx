@@ -323,7 +323,7 @@ const Skill3D = () => {
       }
     );
 
-console.log(bubblesArray)
+// console.log(bubblesArray)
 
 
 

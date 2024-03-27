@@ -30,7 +30,7 @@ const HomeProjects = () => {
     { projectName: "WEATHERIF!", projectVideo: "./video/Weatherify.mp4" },
     { projectName: "Portfolio", projectVideo: "./video/PortfolioHomepage.mp4" },
     { projectName: "Wix Studio clone", projectVideo: "./video/Wetherify.mp4" },
-    { projectName: "Fintech", projectVideo: "./video/Wetherify.mp4" },
+    { projectName: "Fintech", projectVideo: "./video/Wetherify.mp4" }
   ];
 
   // const newer = () => {};

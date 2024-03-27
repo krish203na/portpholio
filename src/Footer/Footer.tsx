@@ -101,10 +101,18 @@ const Footer = () => {
         >
           <div className="text-lg">© Krishna, 2024</div>
           <div className="flex gap-[2vw]">
-            <a className="hover:underline" href="">
+            <a
+              className="hover:underline"
+              target="blank"
+              href="https://www.instagram.com/krish_na203/"
+            >
               Instagram
             </a>
-            <a className="hover:underline" href="">
+            <a
+              className="hover:underline"
+              target="blank"
+              href="https://www.linkedin.com/in/krishna-panchal-5426aa271"
+            >
               Linkedin
             </a>
           </div>
