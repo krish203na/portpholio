@@ -74,7 +74,7 @@ const Home = () => {
           <h1 className="text-black text-[10vw] font-bold logo flex justify-center items-center gap-[10px]  overflow-hidden">
             <motion.span
               className="h-full"
-              initial={{ y: 160 }}
+              initial={{ y: "25vh" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", damping: 5, duration: 1 }}
             >
@@ -82,7 +82,7 @@ const Home = () => {
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 160 }}
+              initial={{ y: "25vh" }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
@@ -95,7 +95,7 @@ const Home = () => {
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 160 }}
+              initial={{ y: "25vh" }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
@@ -108,7 +108,7 @@ const Home = () => {
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 160 }}
+              initial={{ y: "25vh" }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
@@ -121,7 +121,7 @@ const Home = () => {
             </motion.span>
             <motion.span
               className="h-full"
-              initial={{ y: 160 }}
+              initial={{ y: "25vh" }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
@@ -176,7 +176,6 @@ const Home = () => {
         <div>
           <HomeProjects />
         </div>
-
       </div>
     </>
   );
