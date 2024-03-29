@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 const FollowerPointer = ({
   x,
@@ -10,9 +9,7 @@ const FollowerPointer = ({
   y: any;
   videoSrc: string;
 }) => {
-  useEffect(() => {
-    console.log(y);
-  });
+
   return (
     <>
       <motion.video
