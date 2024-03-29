@@ -1,17 +1,11 @@
-// import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/all";
 import React, { Suspense, useRef } from "react";
 import Marquee from "react-fast-marquee";
-// import HeroModel from "../../components/models/HeroModel";
 const HeroModel = React.lazy(() => import("../../components/models/HeroModel"));
 
 const HeroSection = () => {
   const scroll: any = useRef();
 
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
 
   //   gsap.to("#Home", {
   //     scrollTrigger: {
@@ -33,8 +27,7 @@ const HeroSection = () => {
         <Suspense fallback={`this is Loading.....`}>
           <AnimatePresence>
             <motion.div
-              // id="HomeHero"
-              className="md:w-full sm:w-[130vw] w-[100vw] absolute z-50"
+              className="md:w-full sm:w-[130vw] w-[200vw] absolute z-50"
             >
               <HeroModel />
 
@@ -45,7 +38,7 @@ const HeroSection = () => {
         
         <div
           ref={scroll}
-          className="w-[100%] absolute bottom-[0px] fontScroll"
+          className="w-[100%] absolute sm:bottom-[0px] bottom-[-10vh] fontScroll"
         >
           <Marquee className="p-0 m-0 static" autoFill={true} speed={180}>
             <div className="text-[30vh] font-bold text-[#1d2d2ecb] ">
@@ -64,7 +57,6 @@ const HeroSection = () => {
           />
         </div>
         <div className="z-[0] md:top-[18vh] top-[18vh] text md:right-[20vw] right-[20vw] absolute h-[10vw] w-[10vw] flex items-center text-3 font-thin">
-          {/* <HoverSocial /> */}
           <h1 className="textshadow font-semibold text-[6vw] md:text-[4vw] leading-none text-center text-pink-300">
             <span>Full Stack </span>
             Developer

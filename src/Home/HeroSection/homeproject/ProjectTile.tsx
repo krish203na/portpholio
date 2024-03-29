@@ -52,7 +52,7 @@ const ProjectTile = ({
             initial={{ x: "90vw" }}
             whileInView={{ x: "0vw" }}
             transition={{ ease: "easeOut", duration: .8 }}
-            className="border-b ease-out text-5xl font-bold hover:border-b-[orange] font-[] h-[9vw] duration-500 before:duration-500 hover:text-[black] before:-z-[1] z-10 flex justify-start items-center  before:content-[''] before:bg-[#facc15] before:absolute relative before:w-full before:h-[0%] hover:before:h-[100%]"
+            className="border-b ease-out sm:text-5xl text-3xl font-bold hover:border-b-[orange] font-[] sm:h-[9vw] h-[10vh] duration-500 before:duration-500 hover:text-[black] before:-z-[1] z-10 flex justify-start items-center  before:content-[''] before:bg-[#facc15] before:absolute relative before:w-full before:h-[0%] hover:before:h-[100%]"
           >
             <h1 className="px-[1vw] cursor-pointer">{projectName}</h1>
           </motion.li>

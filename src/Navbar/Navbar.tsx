@@ -45,7 +45,6 @@ const Navbar = () => {
   
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
@@ -64,9 +63,9 @@ const Navbar = () => {
         <motion.div
           className={` lg:h-[50px] h-[40px] bg-white/0 rounded-full flex justify-evenly items-center text-lg border border-transparent dark:border-white/[0.2] dark:bg-black/50 backdrop-blur-[5px] shadow-lg dark:shadow-black overflow-hidden`}
           initial={{ width: "60px" }}
-          animate={{ width: visible ? viewportWidth>1024 ? "35%" : viewportWidth > 786 ? "50%" : "100%" : "60px" }}
+          animate={{ width: visible ? viewportWidth>1024 ? "35%" : viewportWidth > 786 ? "50%" : "90%" : "60px" }}
           transition={{ ease: easeOut, duration: 0.8 }}
-          whileHover={{ width: viewportWidth>1024 ? "35%" : viewportWidth > 786 ? "60%" : "100%" }}
+          whileHover={{ width: viewportWidth>1024 ? "35%" : viewportWidth > 786 ? "60%" : "90%" }}
           onHoverStart={() => {
             setVisible(true);
           }}
@@ -78,9 +77,8 @@ const Navbar = () => {
             initial={{ rotateY: 90 }}
             animate={{ rotateY: 0 }}
             transition={{ duration: 0.8 }}
-            className="fa-solid fa-bars absolute font-black left-[21px]"
+            className="fa-solid fa-bars font-black "
           ></motion.i>
-          {/* {navItems.map((item:any,itemNo:Number)=>)} */}
           {navItems.map((item: any, itemId: Number) => (
             <motion.div
               key={itemId.toString()}

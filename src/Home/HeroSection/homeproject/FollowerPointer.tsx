@@ -15,8 +15,6 @@ const FollowerPointer = ({
   });
   return (
     <>
-      {/* <motion.div
-       > */}
       <motion.video
         style={{
           top: y,
@@ -45,7 +43,6 @@ const FollowerPointer = ({
         loop
         src={videoSrc}
       ></motion.video>
-      {/* </motion.div> */}
     </>
   );
 };
