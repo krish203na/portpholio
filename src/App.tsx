@@ -9,32 +9,32 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 function App() {
   
-  const targetRef = useRef<HTMLDivElement>(null);
+  // const targetRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(()=>{
+  // useGSAP(()=>{
 
-    gsap.registerPlugin(ScrollToPlugin);
+  //   gsap.registerPlugin(ScrollToPlugin);
 
 
-   if (targetRef.current) {
-     gsap.to(window, {
-       duration: 2, 
-       scrollTo: {
-         y: targetRef.current.offsetTop,
-         autoKill: false,
-       },
-       ease: "power4.out", 
-     });
-   }
-  })
+  //  if (targetRef.current) {
+  //    gsap.to(window, {
+  //      duration: 2, 
+  //      scrollTo: {
+  //        y: targetRef.current.offsetTop,
+  //        autoKill: false,
+  //      },
+  //      ease: "power4.out", 
+  //    });
+  //  }
+  // })
 
   return (
     <>
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
             <Navbar />
             <Outlet />
-            <Footer />
-         </AnimatePresence>
+            {/* <Footer /> */}
+         {/* </AnimatePresence> */}
     </>
   );
 }

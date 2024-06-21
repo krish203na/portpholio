@@ -1,13 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Home from './Home/Home.tsx'
-import About from './About/About.tsx'
-import Contact from './Contact/Contact.tsx'
-import Github from './Github/Github.tsx'
-import Projects from './Projects/Projects.tsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Home from "./Home/Home.tsx";
+import About from "./About/About.tsx";
+import Contact from "./Contact/Contact.tsx";
+import Github from "./Github/Github.tsx";
+import Projects from "./Projects/Projects.tsx";
+import ProjectDetails from "./Projects/ProjectDetails.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,14 +24,17 @@ const router = createBrowserRouter(
         <Route path="/portpholio/about" element={<About />} />
         <Route path="/portpholio/contact" element={<Contact />} />
         <Route path="/portpholio/github" element={<Github />} />
+
+        {/* ================================================================================ */}
+        {/* PROJECTS LINKS */}
+        <Route path="/portpholio/project/:projectCode" element={<ProjectDetails />} />
       </Route>
     </Route>
   )
 );
 
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

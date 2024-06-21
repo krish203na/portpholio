@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import FollowerPointer from './FollowerPointer';
+import Projects from '../../../Projects/Projects';
 
 const ProjectTile = ({
   projectName,

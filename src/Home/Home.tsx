@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Skill3D from "./HeroSection/Skill3D";
 import HomeProjects from "./HeroSection/HomeProjects";
 import { CardBody, CardContainer } from "../components/3d-card";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
 
@@ -113,17 +114,21 @@ const Home = () => {
           <HeroSection />
         </div>
 
-        <div className="blow sm:w-[100vw] w-[100vw] sm:h-[100vh] flex justify-start items-center flex-col sm:flex-row overflow-hidden">
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:7}}  className="blow sm:w-[100vw] w-[100vw] sm:h-[100vh] flex justify-start items-center flex-col sm:flex-row overflow-hidden">
           <AnimateText text={"I am  Passionate  Full Stack  Developer"} />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:7}} >
           <Skill3D />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:7}} >
           <HomeProjects />
-        </div>
+        </motion.div>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:7}}  className="relative">
+        <Footer/>
+
+        </motion.div>
       </div>
     </>
   );
@@ -238,7 +243,7 @@ const AnimateText = (props: { text: String }) => {
         })}
       </div>
       <div className="sm:w-[50%] h-full p-[5vh] flex justify-center items-start  relative">
-        <CardContainer className="inter-var">
+        <CardContainer className="inter-var" xDeflection={15} yDeflection={200}>
           <CardBody className="bg-transperent relative group/card dark:bg-transperent border-transperent w-auto rounded-xl p-6   ">
             <motion.img
               initial={{ scale: 0, opacity: 0 }}

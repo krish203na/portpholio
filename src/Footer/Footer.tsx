@@ -7,6 +7,7 @@ import ExamplePdf from "../../public/Resume.pdf";
 import { motion } from "framer-motion";
 
 const Footer = () => {
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,7 @@ const Footer = () => {
   });
 
   return (
+    <>
     <div
       id="HomeConnectDiv"
       className="w-100% h-screen flex justify-center items-center overflow-hidden bg-gradient-to-b from-[#2a3637] from-20% to-[#202526] to-70%"
@@ -139,6 +141,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
