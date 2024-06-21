@@ -1,13 +1,13 @@
 // import React from 'react'
 
-import { AnimatePresence, motion, useMotionValue } from "framer-motion";
-import { CardBody, CardContainer } from "../components/3d-card";
+import {  motion } from "framer-motion";
+// import { CardBody, CardContainer } from "../components/3d-card";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { NavLink } from "react-router-dom";
-import React, { Suspense, useEffect, useState } from "react";
-import FollowerPointer from "../Home/HeroSection/homeproject/FollowerPointer";
+// import { NavLink } from "react-router-dom";
+// import React, { Suspense, useEffect, useState } from "react";
+// import FollowerPointer from "../Home/HeroSection/homeproject/FollowerPointer";
 // import { FollowMe } from "./ProjectCard";
 // const ProjectCard = React.lazy(() => import("./ProjectCard"));
 import ProjectCard from "./ProjectCard";

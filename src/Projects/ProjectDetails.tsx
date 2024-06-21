@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useParams } from "react-router-dom";
 
 const ProjectDetails = () => {
@@ -42,7 +42,7 @@ const ProjectDetails = () => {
   ];
   return (
     <>
-      {projects.map((e, i) => {
+      {projects.map((e) => {
         if (e.projectLink === param.projectCode) {
           return (
             <>

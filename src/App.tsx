@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer/Footer";
-import { AnimatePresence } from "framer-motion";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
+// import Footer from "./Footer/Footer";
+// import { AnimatePresence } from "framer-motion";
+// import { useRef } from "react";
+// import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 function App() {
   

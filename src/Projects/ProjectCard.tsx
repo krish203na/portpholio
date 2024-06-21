@@ -1,9 +1,9 @@
-import { useGSAP } from '@gsap/react';
-import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
-import React, { useEffect, useState } from 'react'
+// import { useGSAP } from '@gsap/react';
+// import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
+// import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 
 const ProjectCard = (props: {
   projectName: string;
